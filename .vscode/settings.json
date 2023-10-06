@@ -4,5 +4,5 @@
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "cSpell.words": ["karsten", "tailwindcss"]
+  "cSpell.words": ["candal", "Grotesk", "karsten", "nextui", "tailwindcss"]
 }
