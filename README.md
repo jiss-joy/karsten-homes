@@ -1,7 +1,7 @@
 ## Setup (First time only)
 
 ```
-yarn install                                        # Install all the packages.
+yarn install    # Install all the packages.
 ```
 
 ## Getting started
