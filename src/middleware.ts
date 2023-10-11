@@ -1,27 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const isProduction = (): boolean => {
-  return process.env.NODE_ENV === 'production'
-}
-
 export const config = {
   matcher: ['/'],
 }
 
+/**
+ * @param request The request send to the server to authenticate the user.
+ * Authentication is only staging environment.
+ */
 export function middleware(request: NextRequest) {
-  if (isProduction()) return NextResponse.next()
+  console.log(process.env.NODE_ENV)
+
+  if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'development')
+    return NextResponse.next()
 
   const basicAuth = request.headers.get('authorization')
 
   if (basicAuth) {
     const auth = basicAuth.split(' ')[1]
     const [user, pwd] = atob(auth).toString().split(':')
-    console.log(process.env.BASIC_AUTH_USER, process.env.BASIC_AUTH_PASSWORD)
 
-    if (
-      user === process.env.BASIC_AUTH_USER &&
-      pwd === process.env.BASIC_AUTH_PASSWORD
-    ) {
+    if (user === process.env.BASIC_AUTH_USER && pwd === process.env.BASIC_AUTH_PASSWORD) {
       return NextResponse.next()
     }
   }
