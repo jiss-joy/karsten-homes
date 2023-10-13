@@ -1,4 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { Routes } from '@/routes/routes'
+import { NextURL } from 'next/dist/server/web/next-url'
+
+function maintenanceUrl(request: NextRequest): NextURL {
+  const url = request.nextUrl
+  url.pathname = Routes.maintenance
+
+  return url
+}
 
 export const config = {
   matcher: ['/'],
@@ -9,10 +18,12 @@ export const config = {
  * Authentication is only staging environment.
  */
 export function middleware(request: NextRequest) {
-  console.log(process.env.NODE_ENV)
-
-  if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'development')
-    return NextResponse.next()
+  if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'development') {
+    /**
+     * # TODO Refactor this code.
+     */
+    return NextResponse.redirect(maintenanceUrl(request))
+  }
 
   const basicAuth = request.headers.get('authorization')
 
@@ -21,7 +32,7 @@ export function middleware(request: NextRequest) {
     const [user, pwd] = atob(auth).toString().split(':')
 
     if (user === process.env.BASIC_AUTH_USER && pwd === process.env.BASIC_AUTH_PASSWORD) {
-      return NextResponse.next()
+      return NextResponse.redirect(maintenanceUrl(request))
     }
   }
 
