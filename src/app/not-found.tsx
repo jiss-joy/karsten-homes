@@ -17,7 +17,7 @@ const NotfoundPage = () => {
           className=" sm:w-3/5 w-4/5 md:w-2/6 lg:w-2/5"
         />
         <div className="md:ps-18 flex flex-col items-center justify-center px-8 py-8 md:w-3/5 md:items-start md:ps-16 lg:w-2/5">
-          <h1 className="hidden text-8xl font-bold text-slate-300 md:flex">
+          <h1 className="hidden text-8xl font-bold text-slate-300 md:flex pb-4">
             404
           </h1>
           <h1
