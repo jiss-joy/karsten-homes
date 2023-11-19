@@ -1,7 +1,7 @@
 {
   "hosting": [
     {
-      "target": "karsten-homes-staging",
+      "target": "staging",
       "source": ".",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "frameworksBackend": {
