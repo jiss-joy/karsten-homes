@@ -1,14 +1,13 @@
 {
-  "hosting": {
-    "source": ".",
-    "site": "karsten-homes-staging",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "frameworksBackend": {
-      "region": "asia-east1"
+  "hosting": [
+    {
+      "target": "karsten-homes-staging",
+      "source": ".",
+      "site": "karsten-homes-staging",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "frameworksBackend": {
+        "region": "asia-east1"
+      }
     }
-  }
+  ]
 }

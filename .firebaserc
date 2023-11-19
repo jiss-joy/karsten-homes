@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "karsten-homes"
-  }
+  },
+  "targets": {
+    "karsten-homes": {
+      "hosting": {
+        "staging": [
+          "karsten-homes-staging"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
