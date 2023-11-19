@@ -1,6 +1,7 @@
 {
   "hosting": {
     "source": ".",
+    "site": "karsten-homes-staging",
     "ignore": [
       "firebase.json",
       "**/.*",
