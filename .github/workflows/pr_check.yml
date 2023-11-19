@@ -20,7 +20,8 @@ jobs:
       - name: Lint
         run: yarn lint
 
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_KARSTEN_HOMES }}'
