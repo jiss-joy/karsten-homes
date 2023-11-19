@@ -2,8 +2,7 @@ name: Run checks on each commit.
 on: pull_request
 
 jobs:
-  build_and_preview:
-    if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
+  deploy_to_staging:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -20,3 +19,10 @@ jobs:
 
       - name: Lint
         run: yarn lint
+
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_KARSTEN_HOMES }}'
+          channelId: karsten-homes-staging
+          projectId: karsten-homes
