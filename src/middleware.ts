@@ -18,7 +18,7 @@ export const config = {
  * Authentication is only staging environment.
  */
 export function middleware(request: NextRequest) {
-  if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'development') {
+  if (process.env.NEXT_PUBLIC_ENV === 'production' || process.env.NODE_ENV === 'development') {
     /**
      * # TODO Refactor this code.
      */
