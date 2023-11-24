@@ -10,7 +10,7 @@ function maintenanceUrl(request: NextRequest): NextURL {
 }
 
 export const config = {
-  matcher: ['/', '/maintenance'],
+  matcher: ['/'],
 }
 
 /**
