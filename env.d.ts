@@ -5,6 +5,8 @@ declare global {
     interface ProcessEnv {
       readonly NODE_ENV: 'development' | 'production'
       readonly NEXT_PUBLIC_ENV: 'development' | 'staging' | 'production'
+      readonly BASIC_AUTH_USER: string
+      readonly BASIC_AUTH_PASSWORD: string
     }
   }
 }
