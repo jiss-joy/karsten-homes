@@ -1,8 +1,8 @@
 {
   "hosting": [
     {
+      "source": ".",
       "target": "staging",
-      "public": "build",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "frameworksBackend": {
         "region": "asia-east1"
