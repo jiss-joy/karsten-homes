@@ -1,7 +1,6 @@
 {
   "hosting": [
     {
-      "public": "build",
       "target": "staging",
       "source": ".",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
@@ -16,7 +15,6 @@
       ]
     },
     {
-      "public": "build",
       "target": "production",
       "source": ".",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
