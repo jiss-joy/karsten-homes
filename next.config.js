@@ -9,7 +9,7 @@ const nextConfig = {
         permanent: false,
       },
       {
-        source: '/**',
+        source: '**',
         destination: '/not-found',
         permanent: true,
       },
