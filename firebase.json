@@ -1,7 +1,7 @@
 {
   "hosting": [
     {
-      "source": ".",
+      "source": "build",
       "target": "staging",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "frameworksBackend": {
