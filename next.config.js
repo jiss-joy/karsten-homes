@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   distDir: 'build',
+  /**
+   * TODO: Remove this when the site is ready
+   */
   async redirects() {
     return [
       {
