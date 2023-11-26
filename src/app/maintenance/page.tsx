@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import maintenance from '/public/images/maintenance.png'
+import maintenance from '/public/images/Maintenance.svg'
 import { spicyRice } from '@/styles/fonts'
 
 const MaintenancePage = () => {
