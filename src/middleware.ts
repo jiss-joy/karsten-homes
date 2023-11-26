@@ -1,16 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Routes } from '@/routes/routes'
-import { NextURL } from 'next/dist/server/web/next-url'
+// import { Routes } from '@/routes/routes'
+// import { NextURL } from 'next/dist/server/web/next-url'
 
-function maintenanceUrl(request: NextRequest): NextURL {
-  const url = request.nextUrl
-  url.pathname = Routes.maintenance
+// function maintenanceUrl(request: NextRequest): NextURL {
+//   const url = request.nextUrl
+//   url.pathname = Routes.maintenance
 
-  return url
-}
+//   return url
+// }
 
 export const config = {
-  matcher: ['/'],
+  matcher: ['', '/', '/maintenance'],
 }
 
 /**
@@ -26,7 +26,7 @@ export function middleware(request: NextRequest) {
     /**
      * # TODO: Redirect to home page once development is complete.
      */
-    return NextResponse.redirect(maintenanceUrl(request))
+    return NextResponse.next()
   }
 
   const basicAuth = request.headers.get('authorization')
@@ -35,14 +35,11 @@ export function middleware(request: NextRequest) {
     const auth = basicAuth.split(' ')[1]
     const [user, pwd] = atob(auth).toString().split(':')
 
-    if (
-      user === process.env.BASIC_AUTH_USER &&
-      pwd === process.env.BASIC_AUTH_PASSWORD
-    ) {
+    if (user === process.env.BASIC_AUTH_USER && pwd === process.env.BASIC_AUTH_PASSWORD) {
       /**
        * # TODO: Redirect to home page once development is complete.
        */
-      return NextResponse.redirect(maintenanceUrl(request))
+      return NextResponse.next()
     }
   }
 
