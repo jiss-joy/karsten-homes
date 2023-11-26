@@ -1,13 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-// import { Routes } from '@/routes/routes'
-// import { NextURL } from 'next/dist/server/web/next-url'
-
-// function maintenanceUrl(request: NextRequest): NextURL {
-//   const url = request.nextUrl
-//   url.pathname = Routes.maintenance
-
-//   return url
-// }
 
 export const config = {
   matcher: ['/', '/maintenance'],
@@ -18,10 +9,6 @@ export const config = {
  * Basic Authentication is only for the staging environment.
  */
 export function middleware(request: NextRequest) {
-  console.log(`Env: ${process.env.NEXT_PUBLIC_ENV}`)
-  console.log(`User: ${process.env.BASIC_AUTH_USER}`)
-  console.log(`Password: ${process.env.BASIC_AUTH_PASSWORD}`)
-
   if (process.env.NEXT_PUBLIC_ENV === 'production' || process.env.NODE_ENV === 'development') {
     return NextResponse.next()
   }
