@@ -19,8 +19,8 @@ export const config = {
  */
 export function middleware(request: NextRequest) {
   console.log(`Env: ${process.env.NEXT_PUBLIC_ENV}`)
-  console.log(`User: ${process.env.BASIC_AUTH_USER}`)
-  console.log(`Password: ${process.env.BASIC_AUTH_PASSWORD}`)
+  console.log(`User: ${process.env.NEXT_PUBLIC_BASIC_AUTH_USER}`)
+  console.log(`Password: ${process.env.NEXT_PUBLIC_BASIC_AUTH_PASSWORD}`)
 
   if (process.env.NEXT_PUBLIC_ENV === 'production' || process.env.NODE_ENV === 'development') {
     /**
@@ -35,7 +35,10 @@ export function middleware(request: NextRequest) {
     const auth = basicAuth.split(' ')[1]
     const [user, pwd] = atob(auth).toString().split(':')
 
-    if (user === process.env.BASIC_AUTH_USER && pwd === process.env.BASIC_AUTH_PASSWORD) {
+    if (
+      user === process.env.NEXT_PUBLIC_BASIC_AUTH_USER &&
+      pwd === process.env.NEXT_PUBLIC_BASIC_AUTH_PASSWORD
+    ) {
       /**
        * # TODO: Redirect to home page once development is complete.
        */
