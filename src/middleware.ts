@@ -23,9 +23,6 @@ export function middleware(request: NextRequest) {
   console.log(`Password: ${process.env.BASIC_AUTH_PASSWORD}`)
 
   if (process.env.NEXT_PUBLIC_ENV === 'production' || process.env.NODE_ENV === 'development') {
-    /**
-     * # TODO: Redirect to home page once development is complete.
-     */
     return NextResponse.next()
   }
 
@@ -36,9 +33,6 @@ export function middleware(request: NextRequest) {
     const [user, pwd] = atob(auth).toString().split(':')
 
     if (user === process.env.BASIC_AUTH_USER && pwd === process.env.BASIC_AUTH_PASSWORD) {
-      /**
-       * # TODO: Redirect to home page once development is complete.
-       */
       return NextResponse.next()
     }
   }
