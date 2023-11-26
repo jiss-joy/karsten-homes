@@ -3,6 +3,10 @@ import notfoundImage from '/public/images/not_found.svg'
 import { spicyRice } from '@/styles/fonts'
 import Link from 'next/link'
 
+/**
+ * NOTE: This page is used only for development purposes.
+ * On production environment, 404 file will be used by firebase hosting.
+ */
 const NotfoundPage = () => {
   return (
     <div className="flex h-screen w-full">

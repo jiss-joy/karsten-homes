@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   distDir: 'build',
-  trailingSlash: true,
   /**
    * TODO: Remove this when the site is ready
    */
