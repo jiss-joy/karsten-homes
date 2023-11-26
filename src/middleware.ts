@@ -36,8 +36,8 @@ export function middleware(request: NextRequest) {
     const [user, pwd] = atob(auth).toString().split(':')
 
     if (
-      user === process.env.NEXT_PUBLIC_BASIC_AUTH_USER &&
-      pwd === process.env.NEXT_PUBLIC_BASIC_AUTH_PASSWORD
+      user === process.env.BASIC_AUTH_USER &&
+      pwd === process.env.BASIC_AUTH_PASSWORD
     ) {
       /**
        * # TODO: Redirect to home page once development is complete.

@@ -1,16 +1,22 @@
 {
   "hosting": [
     {
-      "source": ".",
+      "source": "*",
       "target": "staging",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "frameworksBackend": {
         "region": "asia-east1"
-      }
+      },
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/not-found"
+        }
+      ]
     },
     {
-      "target": "production",
       "source": ".",
+      "target": "production",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "frameworksBackend": {
         "region": "asia-east1"
