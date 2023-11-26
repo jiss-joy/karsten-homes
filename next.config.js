@@ -7,12 +7,7 @@ const nextConfig = {
         source: '/',
         destination: '/maintenance',
         permanent: false,
-      },
-      {
-        source: '**',
-        destination: '/not-found',
-        permanent: true,
-      },
+      }
     ]
   },
 }
