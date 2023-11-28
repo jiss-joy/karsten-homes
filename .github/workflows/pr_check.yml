@@ -15,10 +15,14 @@ jobs:
       #     node-version-file: '.node-version'
       #     cache: 'yarn'
 
+      # assignee_count=$(cat ${{ github.event_path }} | jq '.pull_request.assignees')
+
       - name: Set Assignee
         run: |
-          assignee_count=$(cat ${{ github.event_path }} | jq '.pull_request.assignees')
-          echo "Assignee count: $assignee_count"
+          assignee_count=$(jq '.pull_request.assignees')
+          assignee_count_len=$(jq '.pull_request.assignees | length')
+          echo "Assignee count JQ: $assignee_count"
+          echo "Assignee count with length: $assignee_count_len"
 
       # - name: Group of log lines
       #   run: |
