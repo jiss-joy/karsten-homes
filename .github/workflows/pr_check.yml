@@ -15,10 +15,16 @@ jobs:
       #     node-version-file: '.node-version'
       #     cache: 'yarn'
 
-      - name: Set Assignee
+      # - name: Set Assignee
+      #   run: |
+      #     assignee_count=$(cat ${{ github.event_path }} | jq '.pull_request.assignees)
+      #     Write-Output assignee_count
+
+      - name: Group of log lines
         run: |
-          assignee_count=$(cat ${{ github.event_path }} | jq '.pull_request.assignees)
-          Write-Output assignee_count
+          Write-Output "::group::My title"
+          Write-Output "Inside group"
+          Write-Output "::endgroup::"
 
       # - name: Install packages
       #   run: yarn install --frozen-lockfile
