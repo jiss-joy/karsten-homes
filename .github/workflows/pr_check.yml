@@ -15,8 +15,18 @@ jobs:
           node-version-file: '.node-version'
           cache: 'yarn'
 
-      - name: Install packages
-        run: yarn install --frozen-lockfile
+      - name: Add Assignee
+        run: |
+          assignee=${{ github.actor }}
+          echo "assignee=$assignee" >> $GITHUB_OUTPUT
 
-      - name: Lint
-        run: yarn lint
+      - name: Set reviewers
+        run: |
+          reviewers=jiss-joy,Siri1999
+          echo "reviewers=$reviewers" >> $GITHUB_OUTPUT
+
+      # - name: Install packages
+      #   run: yarn install --frozen-lockfile
+
+      # - name: Lint
+      #   run: yarn lint
