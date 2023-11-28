@@ -14,23 +14,8 @@ jobs:
       #   with:
       #     node-version-file: '.node-version'
       #     cache: 'yarn'
-
-      # assignee_count=$(cat ${{ github.event_path }} | jq '.pull_request.assignees')
-
-      - name: Set Assignee
-        run: |
-          assignee_count=$(cat ${{ github.event_path }})
-          assignee_count_pr=$(jq '.pull_request.assignees')
-          assignee_count_len=$(jq '.pull_request.assignees | length')
-          echo "Assignee count: $assignee_count"
-          echo "Assignee count PR: $assignee_count_pr"
-          echo "Assignee count with length: $assignee_count_len"
-
-      # - name: Group of log lines
-      #   run: |
-      #     echo "::group::My title"
-      #     echo "Inside group"
-      #     echo "::endgroup::"
+      - name: Auto Assign Action
+        uses: kentaro-m/auto-assign-action@v1.2.5
 
       # - name: Install packages
       #   run: yarn install --frozen-lockfile
