@@ -17,12 +17,6 @@ jobs:
 
       - name: Auto Assign Assignee and Reviews
         uses: kentaro-m/auto-assign-action@v1.2.5
-  
-
-      - name: Set reviewers
-        run: |
-          reviewers=jiss-joy,Siri1999
-          echo "reviewers=$reviewers" >> $GITHUB_OUTPUT
 
       # - name: Install packages
       #   run: yarn install --frozen-lockfile
