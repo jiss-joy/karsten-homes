@@ -19,9 +19,11 @@ jobs:
 
       - name: Set Assignee
         run: |
-          assignee_count=$(jq '.pull_request.assignees')
-          assignee_count_len=$(jq '.pull_request.assignees | length')
-          echo "Assignee count JQ: $assignee_count"
+          assignee_count=$(cat ${{ github.event_path }})
+          assignee_count_pr=$(cat jq '.pull_request.assignees')
+          assignee_count_len=$(cat jq '.pull_request.assignees | length')
+          echo "Assignee count: $assignee_count"
+          echo "Assignee count PR: $assignee_count_pr"
           echo "Assignee count with length: $assignee_count_len"
 
       # - name: Group of log lines
