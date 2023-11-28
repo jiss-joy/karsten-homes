@@ -9,22 +9,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup node.js environment
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.node-version'
-          cache: 'yarn'
+      # - name: Setup node.js environment
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version-file: '.node-version'
+      #     cache: 'yarn'
 
       - name: Set Assignee
         run: |
-          assignee_count=$(cat ${{ github.event_path }} | jq '.pull_request.assignees | length')
-          if [[ 0 == $assignee_count ]]; then
-            curl -X POST \
-              -H "Content-Type: application/json" \
-              -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-              -d "{ \"assignees\": \"${{ github.actor }}\" }" \
-              https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/assignees
-          fi
+          assignee_count=$(jq '.pull_request.assignees)
+          cat assignee_count
 
       # - name: Install packages
       #   run: yarn install --frozen-lockfile
