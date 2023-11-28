@@ -22,9 +22,9 @@ jobs:
 
       - name: Group of log lines
         run: |
-          Write-Output "::group::My title"
-          Write-Output "Inside group"
-          Write-Output "::endgroup::"
+            echo "::group::My title"
+            echo "Inside group"
+            echo "::endgroup::"
 
       # - name: Install packages
       #   run: yarn install --frozen-lockfile
