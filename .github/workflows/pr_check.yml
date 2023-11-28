@@ -17,7 +17,7 @@ jobs:
 
       - name: Set Assignee
         run: |
-          assignee_count=$(jq '.pull_request.assignees)
+          assignee_count=$(cat ${{ github.event_path }} | jq '.pull_request.assignees)
           cat assignee_count
 
       # - name: Install packages
