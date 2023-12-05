@@ -5,6 +5,8 @@ const nextConfig = {
    * TODO: Remove this when the site is ready
    */
   async redirects() {
+    if (process.env.NODE_ENV === 'development' || process.env.NEXT_PUBLIC_ENV === 'staging') return [];
+
     return [
       {
         source: '/',
