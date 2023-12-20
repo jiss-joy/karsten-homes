@@ -1,0 +1,20 @@
+{
+  "hosting": [
+    {
+      "source": ".",
+      "target": "staging",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "frameworksBackend": {
+        "region": "asia-east1"
+      }
+    },
+    {
+      "source": ".",
+      "target": "production",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "frameworksBackend": {
+        "region": "asia-east1"
+      }
+    }
+  ]
+}
