@@ -35,4 +35,6 @@ jobs:
           projectId: karsten-homes
         env:
           FIREBASE_CLI_EXPERIMENTS: webframeworks
-          NODE_ENV: test
+          NEXT_PUBLIC_ENV: '${{ vars.ENV_STAGING }}'
+          NEXT_PUBLIC_BASIC_AUTH_USER: '${{ vars.BASIC_AUTH_USER }}'
+          NEXT_PUBLIC_BASIC_AUTH_PASSWORD: '${{ vars.BASIC_AUTH_PASSWORD }}'
