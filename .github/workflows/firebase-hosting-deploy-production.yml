@@ -4,7 +4,7 @@
 name: Deploy to Firebase Hosting on merging staging to production (main).
 'on': 
   push: 
-    branch:
+    branches:
       - main
 jobs:
   build_and_deploy_to_main:
