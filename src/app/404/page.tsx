@@ -3,11 +3,7 @@ import notfoundImage from '/public/images/not_found.svg'
 import { spicyRice } from '@/styles/fonts'
 import Link from 'next/link'
 
-/**
- * NOTE: This page is used only for development purposes.
- * On production environment, 404 file will be used by firebase hosting.
- */
-const NotfoundPage = () => {
+const PageNotFound = () => {
   return (
     <div className="flex h-screen w-full">
       <div className="flex h-screen w-full flex-col items-center justify-center px-8 md:flex-row">
@@ -32,4 +28,4 @@ const NotfoundPage = () => {
     </div>
   )
 }
-export default NotfoundPage
+export default PageNotFound
