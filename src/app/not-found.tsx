@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import notfoundImage from '/public/images/not_found.svg'
 import { spicyRice } from '@/styles/fonts'
-import Link from 'next/link'
+import HomeButton from '@/components/buttons/home_button'
 
 /**
  * NOTE: This page is used only for development purposes.
@@ -24,9 +24,7 @@ const NotfoundPage = () => {
             It looks like the page you were looking for is nowhere to be found. Please navigate back
             or visit our homepage to explore other content.
           </p>
-          <button className="my-6 h-10 w-44 rounded bg-blue-500 text-base font-bold text-white sm:h-14 sm:w-72  sm:text-xl md:self-center md:text-2xl">
-            <Link href='/maintenance'>Home</Link>
-          </button>
+          <HomeButton />
         </div>
       </div>
     </div>
