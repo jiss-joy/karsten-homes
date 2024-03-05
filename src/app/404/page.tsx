@@ -21,7 +21,7 @@ const PageNotFound = () => {
             or visit our homepage to explore other content.
           </p>
           <button className="my-6 h-10 w-44 rounded bg-blue-500 text-base font-bold text-white sm:h-14 sm:w-72  sm:text-xl md:self-center md:text-2xl">
-            <Link href={''}>Home</Link>
+            <Link href="/maintenance">Home</Link>
           </button>
         </div>
       </div>
