@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import notfoundImage from '/public/images/not_found.svg'
 import { spicyRice } from '@/styles/fonts'
